@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080a0b"><meta name="mobile-web-app-capable" content="yes">
+<title>CameraTel — projection propre</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="stage">
+  <video id="feed" autoplay muted playsinline aria-label="Vue caméra en direct"></video>
+  <section id="welcome" class="overlay">
+    <div class="card"><div class="mark" aria-hidden="true">◉</div><p class="eyebrow">CAMERATEL / LIVE</p><h1>Rien que<br>l’image.</h1><p class="intro">Votre caméra, plein écran.<br>Prête à être projetée avec Smart View.</p>
+    <button id="start" class="primary">Ouvrir la caméra <span>↗</span></button>
+    <p id="status" role="status" aria-live="polite">Autorisez la caméra au premier lancement.</p>
+    <div class="guide"><span>◎</span><p><b>Double tap pour les réglages</b><br>Caméra · cadrage · plein écran</p></div>
+    <details><summary>Installer sur le téléphone</summary><p>Dans Chrome : menu ⋮ → Installer l’application ou Ajouter à l’écran d’accueil. Lancez CameraTel depuis son icône, activez Smart View, puis ouvrez la caméra. Le plein écran masque les barres lorsque le navigateur le permet ; un geste depuis le bord peut les rappeler.</p></details>
+    <p class="privacy">Aucun enregistrement. Aucun son. Aucune image envoyée.</p></div>
+  </section>
+  <section id="menu" class="overlay" hidden aria-label="Réglages">
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="menu-title"><div class="panel-head"><div><p class="eyebrow">PROJECTION</p><h2 id="menu-title">Réglages</h2></div><button id="close" class="close" aria-label="Fermer les réglages">×</button></div>
+    <button id="switch" class="row"><span>↻</span><span>Caméra<strong id="camera-label">Arrière</strong></span><span>⇄</span></button>
+    <button id="fit" class="row"><span>⛶</span><span>Cadrage<strong id="fit-label">Image entière</strong></span><span>⇄</span></button>
+    <button id="fullscreen" class="row"><span>↗</span><span>Plein écran<strong id="full-label">Masquer les barres du téléphone</strong></span><span>→</span></button>
+    <p id="menu-status" role="status" aria-live="polite">Le menu se ferme après 8 secondes.</p><button id="stop" class="quiet">Fermer la caméra</button></div>
+  </section>
+</main><script src="app.js"></script>
+</body></html>
